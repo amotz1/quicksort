@@ -31,17 +31,24 @@ def swap(list, index1, index2):
 
 
 def testswap():
+    print("\ntestswap in ...")
     testCases = [([1, 0], 0, 1), ([2, 3, 5], 0, 2), ([4, 8, 7, 9], 0, 3)]
 
     for testcase in testCases:
         print("in ", testcase[0], testcase[1], testcase[2])
         print("out ", swap(testcase[0], testcase[1], testcase[2]))
+    print("testswap out.")
 
 
 testswap()
 
 
+# [aviv] (Typically the documentation for each function is right above that function.
+# It's okay that you have it all at the top.)
 def partition(list, start, end):
+    assert start <= end
+    assert end <= len(list)
+    assert start >= 0
     pivot = end
     pindex = start
     for i in range(pindex, pivot):
@@ -52,12 +59,20 @@ def partition(list, start, end):
     return pindex
 
 
-testcases = [([1, 1], 0, 1), ([1, 2, 3], 0, 2), ([3, 2, 1], 0, 2), ([4, 7, 8, 4], 0, 3), ([2, 15, 11, 9], 0, 3)]
+# [aviv] This is a "global variable", and that's not great form. We can discuss this and "scoping" in general.
+testcases = [
+    ([1, 1], 0, 1),
+    ([1, 2, 3], 0, 2),
+    ([3, 2, 1], 0, 2),
+    ([4, 7, 8, 4], 0, 3),
+    ([2, 15, 11, 9], 0, 3)]
 
 
 def testpartition():
+    print("\ntestpartition in ...")
     for testcase in testcases:
         print(partition(testcase[0], testcase[1], testcase[2]))
+    print("\ntestpartition out.")
 
 
 testpartition()
@@ -79,9 +94,11 @@ testcases = [([], 0, 0), ([1], 0, 0), ([1, 1], 0, 1), ([1, 2, 3], 0, 2), ([3, 2,
 
 
 def testquicksort():
+    print("\ntestquicksort in ...")
     for testcase in testcases:
         print("in ", testcase[0])
         print("out ", quicksort(testcase[0], testcase[1], testcase[2]))
+    print("\ntestquicksort in ...")
 
 
 testquicksort()
