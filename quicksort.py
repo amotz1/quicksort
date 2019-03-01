@@ -44,7 +44,7 @@ testswap()
 
 
 # [aviv] (Typically the documentation for each function is right above that function.
-# It's okay that you have it all at the top.)
+# It's okay that you have it all at the top.) xx
 def partition(list, start, end):
     assert start <= end
     assert end <= len(list)
